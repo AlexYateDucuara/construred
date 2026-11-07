@@ -32,6 +32,8 @@
 html {
   font-size: 93.75%;
   scroll-padding-top: 72px;
+  /* Chrome para Android solo evita la franja blanca lateral si también se recorta aquí */
+  overflow-x: clip;
 }
 
 body {

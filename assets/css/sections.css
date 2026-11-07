@@ -5,7 +5,8 @@
 /* ---------- Cómo funciona ---------- */
 .phone-frame {
   position: relative;
-  max-width: 340px;
+  /* 82%: deja espacio para el recuadro naranja inclinado, que sobresale por la derecha */
+  max-width: min(340px, 82%);
   margin: 0 auto;
 }
 .phone-frame::before {
