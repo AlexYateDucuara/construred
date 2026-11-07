@@ -1,0 +1,129 @@
+/* =========================================================
+   BASE – variables, tipografía, utilidades y animaciones
+   Paleta tomada del logo de CONSTRURED
+   ========================================================= */
+:root {
+  --cr-navy: #012767;
+  --cr-navy-2: #013385;
+  --cr-navy-deep: #011a47;
+  --cr-blue: #0078d6;
+  --cr-yellow: #fec602;
+  --cr-yellow-2: #fdbb03;
+  --cr-orange: #f37702;
+  --cr-green: #26a925;
+  --cr-gold: #dba865;
+  --cr-wa: #158530;        /* verde WhatsApp con contraste AA sobre blanco */
+  --cr-wa-hover: #106b26;
+  --cr-wa-float: #179c47;
+  --cr-ink: #0f1b33;
+  --cr-muted: #55617a;
+  --cr-tint: #f3f7fc;
+  --cr-line: #e3e9f3;
+
+  --cr-radius: 20px;
+  --cr-shadow: 0 20px 44px -26px rgba(1, 39, 103, .45);
+
+  --font-head: "Montserrat", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* ---------- Global ---------- */
+/* Escala compacta: 93.75% = 15px. Todo lo definido en rem (incluido Bootstrap) se ajusta. */
+html {
+  font-size: 93.75%;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--cr-ink);
+  background: #fff;
+  /* clip (no hidden): evita scroll horizontal sin convertir el body en contenedor
+     de scroll, lo que rompería el ScrollSpy de Bootstrap */
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-head); }
+
+h2 {
+  font-weight: 800;
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -.015em;
+  color: var(--cr-navy);
+}
+
+img { max-width: 100%; height: auto; }
+a[data-wa] { cursor: pointer; }
+
+/* ---------- Utilidades ---------- */
+.text-muted-cr { color: var(--cr-muted); font-size: 1rem; line-height: 1.7; }
+.lead-light { color: rgba(255, 255, 255, .8); font-size: 1rem; line-height: 1.7; margin-bottom: 1.4rem; }
+.bg-yellow { background: var(--cr-yellow); color: var(--cr-navy); }
+.bg-wa { background: var(--cr-wa); color: #fff; }
+
+/* ---------- Encabezados de sección ---------- */
+.section { padding: 84px 0; }
+.section-tint { background: var(--cr-tint); }
+
+.section-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+.section-head p { color: var(--cr-muted); font-size: 1rem; margin: 0; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cr-blue);
+  background: rgba(0, 120, 214, .08);
+  padding: .38rem .85rem;
+  border-radius: 999px;
+  margin-bottom: .85rem;
+}
+.eyebrow i { font-size: 1.15em; }
+.eyebrow--light { color: var(--cr-yellow); background: rgba(254, 198, 2, .12); }
+
+@media (max-width: 767.98px) {
+  .section { padding: 64px 0; }
+  .section-head { margin-bottom: 34px; }
+}
+
+/* Sección compacta: para que el contenido completo quepa en una pantalla de escritorio */
+.section--compact { padding: 52px 0; }
+.section--compact .section-head { max-width: none; margin-bottom: 22px; }
+
+@media (max-width: 767.98px) {
+  .section--compact { padding: 48px 0; }
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: .8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Solo se ocultan si JS está activo (clase .js en <html>) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; }
+}

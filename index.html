@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONSTRURED | Maestros de obra verificados por WhatsApp</title>
+  <meta name="description" content="Conectamos a las familias con albañiles, plomeros, pintores y electricistas verificados. Sin intermediarios, con precios justos y contacto directo por WhatsApp.">
+  <meta name="theme-color" content="#012767">
+
+  <!-- Vista previa al compartir el enlace (GitHub Pages: alexyateducuara.github.io/construred) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CONSTRURED | Construimos confianza, conectamos talento">
+  <meta property="og:description" content="Maestros de obra verificados. Contacto directo por WhatsApp en menos de un minuto.">
+  <meta property="og:image" content="https://alexyateducuara.github.io/construred/assets/img/og-construred.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Marca que JS está activo para habilitar las animaciones sin parpadeo -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/reviews.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="-80px 0px -40%" tabindex="0">
+
+  <!-- ===== Navegación ===== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top cr-navbar" aria-label="Principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+        <img src="assets/img/logo-icono-128.png" alt="" width="38" height="38">
+        <span class="brand-word">CONSTRU<span>RED</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list" aria-hidden="true"></i></button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center" id="nav-links"></ul>
+        <a class="btn btn-wa btn-sm-pill ms-lg-3 mt-2 mt-lg-0" data-wa target="_blank" rel="noopener"><i class="bi bi-whatsapp" aria-hidden="true"></i> Escríbenos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== Portada ===== -->
+    <header id="inicio" class="hero">
+      <div class="container position-relative">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <span class="hero-badge reveal"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Maestros de obra verificados</span>
+            <h1 class="hero-title reveal">Construimos <span class="mark-yellow">confianza</span>, conectamos talento</h1>
+            <p class="hero-lead reveal">Encuentra albañiles, plomeros, pintores y electricistas verificados cerca de ti.
+              Sin intermediarios, con precios justos y contacto directo por WhatsApp en menos de un minuto.</p>
+            <div class="d-flex flex-wrap gap-2 gap-sm-3 reveal">
+              <a class="btn btn-wa btn-lg" data-wa target="_blank" rel="noopener"><i class="bi bi-whatsapp" aria-hidden="true"></i> Cotizar por WhatsApp</a>
+              <a class="btn btn-ghost btn-lg" href="#servicios"><i class="bi bi-grid" aria-hidden="true"></i> Ver servicios</a>
+            </div>
+            <ul class="hero-trust reveal" id="hero-highlights"></ul>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-visual reveal">
+              <div class="hero-photo-frame">
+                <img class="hero-photo" src="assets/img/hero-apreton.jpg" width="1120" height="630" alt="Una clienta cierra un acuerdo con un maestro de obra con casco amarillo frente a una casa">
+              </div>
+              <img class="hero-bubble hero-bubble--1" src="assets/img/servicio-plomeria.jpg" width="400" height="400" alt="Plomero reparando la tubería de un lavamanos">
+              <img class="hero-bubble hero-bubble--2" src="assets/img/servicio-electricidad.jpg" width="400" height="400" alt="Electricista revisando un tablero eléctrico">
+              <div id="hero-chips"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Cifras clave (data/content.js → STATS) ===== -->
+    <section class="stats" aria-label="Cifras clave">
+      <div class="container">
+        <div class="stats-card reveal">
+          <div class="row g-0 text-center" id="stats-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Servicios (SERVICES) ===== -->
+    <section id="servicios" class="section section--compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><i class="bi bi-tools" aria-hidden="true"></i> Nuestros servicios</span>
+          <h2>Mano de obra honesta para cada arreglo de tu hogar</h2>
+          <p>Elige la especialidad que necesitas y habla directo con un maestro verificado.</p>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 g-lg-4 justify-content-center" id="services-list"></div>
+      </div>
+    </section>
+
+    <!-- ===== Problema / solución (COMPARISON) ===== -->
+    <section class="section section-tint">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 reveal">
+            <span class="eyebrow"><i class="bi bi-house-heart" aria-hidden="true"></i> ¿Por qué existimos?</span>
+            <h2 class="mb-3">Reparar tu casa no debería ser un riesgo</h2>
+            <p class="text-muted-cr">Muchas familias no pueden pagar una constructora tradicional y terminan contratando
+              mano de obra informal a ciegas. Del otro lado, hay maestros buenísimos sin trabajo
+              porque nadie los conoce. CONSTRURED es el puente entre los dos.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3 g-lg-4">
+              <div class="col-md-6 reveal">
+                <div class="compare compare--bad">
+                  <h3><i class="bi bi-exclamation-octagon-fill" aria-hidden="true"></i> Contratar a ciegas</h3>
+                  <ul id="compare-without"></ul>
+                </div>
+              </div>
+              <div class="col-md-6 reveal">
+                <div class="compare compare--good">
+                  <h3><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Con CONSTRURED</h3>
+                  <ul id="compare-with"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cómo funciona (STEPS) ===== -->
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 order-lg-2 reveal">
+            <div class="phone-frame">
+              <img src="assets/img/app-celular.jpg" width="445" height="521" loading="lazy" alt="Celular mostrando la plataforma CONSTRURED con el perfil de un maestro verificado">
+            </div>
+          </div>
+          <div class="col-lg-7 order-lg-1">
+            <div class="reveal">
+              <span class="eyebrow"><i class="bi bi-signpost-split" aria-hidden="true"></i> Cómo funciona</span>
+              <h2 class="mb-4">Tu maestro ideal en solo 3 toques</h2>
+            </div>
+            <ol class="steps" id="steps-list"></ol>
+            <a class="btn btn-wa btn-lg mt-1 reveal" data-wa target="_blank" rel="noopener"><i class="bi bi-whatsapp" aria-hidden="true"></i> Empezar ahora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Beneficios (FEATURES) ===== -->
+    <section id="beneficios" class="section section-tint section--compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><i class="bi bi-award" aria-hidden="true"></i> Por qué elegirnos</span>
+          <h2>Mejor precio, más rapidez y total tranquilidad</h2>
+        </div>
+        <div class="row g-3" id="features-list"></div>
+      </div>
+    </section>
+
+    <!-- ===== Sello Maestro Verificado (VERIFICATION_CHECKS) ===== -->
+    <section id="confianza" class="verified">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 text-center reveal">
+            <div class="verified-photo">
+              <img src="assets/img/servicio-albanileria.jpg" width="420" height="420" loading="lazy" alt="Maestro de obra verificado por CONSTRURED">
+              <span class="verified-seal"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Maestro Verificado</span>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal">
+            <span class="eyebrow eyebrow--light"><i class="bi bi-shield-check" aria-hidden="true"></i> Sello de confianza</span>
+            <h2>¿Quién entra a tu casa? Alguien honesto y calificado</h2>
+            <p class="lead-light">Cambiamos el miedo a ser estafado por total tranquilidad. Cada maestro pasa por una revisión antes de aparecer en la plataforma.</p>
+            <ul class="checklist" id="verified-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reseñas (REVIEWS) ===== -->
+    <section id="resenas" class="section section-tint section--compact reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><i class="bi bi-star" aria-hidden="true"></i> Reseñas</span>
+          <h2>Lo que dicen las familias y los maestros</h2>
+          <div class="reviews-head-summary" id="reviews-summary"></div>
+        </div>
+        <div class="row g-3 reviews-list" id="reviews-list"></div>
+        <p class="reviews-hint d-md-none"><i class="bi bi-hand-index" aria-hidden="true"></i> Desliza para ver más reseñas</p>
+      </div>
+    </section>
+
+    <!-- ===== Para maestros (PRO_BENEFITS) ===== -->
+    <section id="maestros" class="section section--compact">
+      <div class="container">
+        <div class="pro-card reveal">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-7">
+              <span class="eyebrow"><i class="bi bi-hammer" aria-hidden="true"></i> ¿Eres maestro de obra?</span>
+              <h2>Convierte tu celular en una fuente de trabajo estable</h2>
+              <p class="text-muted-cr mb-4">Si eres albañil, plomero, pintor o electricista independiente, únete a CONSTRURED y consigue clientes de tu barrio sin depender del día a día.</p>
+              <div class="row g-2 g-sm-3 mb-4" id="pro-benefits"></div>
+              <a class="btn btn-yellow btn-lg" data-wa="Hola CONSTRURED, soy maestro de obra y quiero registrarme" target="_blank" rel="noopener"><i class="bi bi-person-plus-fill" aria-hidden="true"></i> Quiero registrarme</a>
+            </div>
+            <div class="col-lg-5">
+              <div class="pro-bubbles" aria-hidden="true">
+                <span class="pb pb-1"><img src="assets/img/servicio-pintura.jpg" alt="" width="400" height="400" loading="lazy"><span class="service-badge"><i class="bi bi-paint-bucket"></i></span></span>
+                <span class="pb pb-2"><img src="assets/img/maestro-electricista.jpg" alt="" width="400" height="400" loading="lazy"><span class="service-badge"><i class="bi bi-lightning-charge-fill"></i></span></span>
+                <span class="pb pb-3"><img src="assets/img/servicio-plomeria.jpg" alt="" width="400" height="400" loading="lazy"><span class="service-badge"><i class="bi bi-droplet-half"></i></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Preguntas frecuentes (FAQS) ===== -->
+    <section id="preguntas" class="section section-tint section--compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow"><i class="bi bi-chat-dots" aria-hidden="true"></i> Preguntas frecuentes</span>
+          <h2>Resolvemos tus dudas</h2>
+        </div>
+        <div class="accordion faq reveal" id="faq"></div>
+      </div>
+    </section>
+
+    <!-- ===== Contacto + QR (PAYMENT_METHODS) ===== -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="row align-items-center gy-4 position-relative">
+            <div class="col-lg-7 text-center text-lg-start">
+              <span class="eyebrow eyebrow--light"><i class="bi bi-telephone" aria-hidden="true"></i> Contáctanos</span>
+              <h2>Solicita tu cotización hoy</h2>
+              <p class="lead-light">Te ayudamos a encontrar una solución clara, con precios transparentes y tiempos de entrega definidos.</p>
+              <div class="d-flex flex-wrap gap-2 gap-sm-3 justify-content-center justify-content-lg-start">
+                <a class="btn btn-wa btn-lg" data-wa target="_blank" rel="noopener"><i class="bi bi-whatsapp" aria-hidden="true"></i> Escribir por WhatsApp</a>
+                <a class="btn btn-ghost btn-lg" href="tel:+573108234634"><i class="bi bi-telephone-fill" aria-hidden="true"></i> 310 823 4634</a>
+              </div>
+              <p class="pay-title"><i class="bi bi-wallet2" aria-hidden="true"></i> Medios de pago</p>
+              <div class="pay-methods justify-content-center justify-content-lg-start" id="payment-methods"></div>
+            </div>
+            <div class="col-lg-5">
+              <div class="qr-card">
+                <img src="assets/img/qr-whatsapp.png" width="1024" height="1024" loading="lazy" alt="Código QR que abre un chat de WhatsApp con CONSTRURED">
+                <p class="qr-title"><i class="bi bi-qr-code-scan" aria-hidden="true"></i> Escanea con tu celular</p>
+                <p class="qr-sub">y escríbenos directo por WhatsApp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Pie de página ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        <div class="col-lg-4">
+          <img src="assets/img/logo-construred-blanco-480.png" alt="CONSTRURED – Trato directo, confianza" width="170" height="108" class="footer-logo">
+          <p class="mt-3 mb-0">Construimos confianza, conectamos talento.</p>
+        </div>
+        <nav class="col-6 col-lg-2 offset-lg-2" aria-label="Secciones">
+          <h4>Explora</h4>
+          <ul id="footer-links"></ul>
+        </nav>
+        <div class="col-6 col-lg-4">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a data-wa target="_blank" rel="noopener"><i class="bi bi-whatsapp" aria-hidden="true"></i> +57 310 823 4634</a></li>
+            <li><a href="tel:+573108234634"><i class="bi bi-telephone" aria-hidden="true"></i> Llamar ahora</a></li>
+            <li><a href="#maestros"><i class="bi bi-person-plus" aria-hidden="true"></i> Registro de maestros</a></li>
+            <li><a href="#contacto"><i class="bi bi-qr-code" aria-hidden="true"></i> Código QR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="year">2026</span> CONSTRURED. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

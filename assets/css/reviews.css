@@ -1,0 +1,143 @@
+/* =========================================================
+   RESEÑAS – resumen de calificación y tarjetas compactas
+   Pensadas para que las 6 tarjetas quepan en una pantalla de escritorio.
+   ========================================================= */
+
+/* Encabezado en una fila: título a la izquierda y promedio a la derecha */
+.reviews .section-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: 1.5rem;
+  max-width: none;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.reviews .section-head .eyebrow { justify-self: start; grid-column: 1; }
+.reviews .section-head h2 { grid-column: 1; margin: 0; }
+.reviews-head-summary { grid-column: 2; grid-row: 1 / span 2; }
+.reviews-head-summary .review-summary { margin-top: 0; }
+
+.reviews-hint {
+  margin: .6rem 0 0;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--cr-muted);
+}
+.reviews-hint i { color: var(--cr-blue); margin-right: .2rem; }
+
+.stars {
+  display: inline-flex;
+  gap: 1px;
+  color: #f2a900;
+  font-size: .78rem;
+}
+
+/* ---------- Resumen (promedio) ---------- */
+.review-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: .8rem;
+  padding: .35rem 1rem .35rem .4rem;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px -18px rgba(1, 39, 103, .5);
+  text-align: left;
+}
+.review-avg {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cr-navy);
+  color: var(--cr-yellow);
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: .95rem;
+}
+.review-summary .stars { font-size: .9rem; }
+.review-summary small { display: block; color: var(--cr-muted); font-size: .76rem; }
+
+/* ---------- Tarjeta de reseña ---------- */
+.review-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--cr-line);
+  border-radius: 16px;
+  padding: 14px 16px 12px;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.review-card:hover { transform: translateY(-4px); box-shadow: var(--cr-shadow); border-color: transparent; }
+
+.review-quote {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: rgba(0, 120, 214, .14);
+}
+
+.review-text { flex-grow: 1; margin: .4rem 0 .6rem; }
+.review-text p {
+  margin: 0;
+  color: var(--cr-ink);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding-top: .55rem;
+  border-top: 1px dashed var(--cr-line);
+}
+.review-avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, var(--cr-blue), var(--cr-navy));
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: .7rem;
+  box-shadow: 0 0 0 2px rgba(254, 198, 2, .9);
+}
+.review-author strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: .84rem;
+  line-height: 1.2;
+  color: var(--cr-navy);
+}
+.review-author small { color: var(--cr-muted); font-size: .74rem; }
+.review-author small i { color: var(--cr-blue); margin-right: .1rem; }
+
+/* ---------- Celular: carrusel que se desliza con el dedo ---------- */
+@media (max-width: 767.98px) {
+  .reviews .section-head { display: block; text-align: center; }
+  .reviews-head-summary .review-summary { margin-top: .8rem; }
+  .reviews-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+  }
+  .reviews-list::-webkit-scrollbar { display: none; }
+  .reviews-list > * {
+    flex: 0 0 84%;
+    scroll-snap-align: center;
+  }
+  /* Sin animación de entrada: las tarjetas fuera de pantalla aparecen al deslizar */
+  .js .reviews-list > .reveal { opacity: 1; transform: none; }
+}
