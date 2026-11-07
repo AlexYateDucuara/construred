@@ -171,7 +171,7 @@ export const FEATURES = [
 export const VERIFICATION_CHECKS = [
   { icon: 'file-earmark-check', text: 'Revisión de antecedentes judiciales' },
   { icon: 'mortarboard', text: 'Validación de referencias y certificaciones (como el SENA)' },
-  { icon: 'star-half', text: 'Opiniones y calificaciones de otros vecinos' },
+  { icon: 'star-half', text: 'Opiniones y calificaciones de otros usuarios' },
   { icon: 'headset', text: 'Seguimiento después del servicio para confirmar tu satisfacción' },
 ];
 
